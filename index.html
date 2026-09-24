@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduRance | Knowledge Today. Success Tomorrow.</title>
+<meta name="description" content="EduRance connects learners, parents, educators, tutors and institutions through practical learning journeys, progress support and opportunity discovery.">
+<link rel="icon" href="assets/edurance-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Brand colours: replace with values sampled from the EduRance logo if they differ */
+  --navy:#0f3d4c;
+  --navy-2:#16566b;
+  --gold:#f2a93b;
+  --leaf:#2e9e6b;
+  --chalk:#f6f7f2;
+  --ink:#13222b;
+  --muted:#5b6b73;
+  --line:#dfe4de;
+  --white:#fff;
+  --r-lg:28px;--r-md:18px;--r-sm:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);background:var(--chalk);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+section{padding:clamp(64px,9vw,112px) 0}
+h1,h2,h3,h4{line-height:1.12;letter-spacing:-.015em}
+h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:800;max-width:20ch;margin-bottom:18px}
+.kicker{color:var(--leaf);font-weight:700;font-size:.95rem;margin-bottom:12px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#f7bb5c}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:var(--white)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Nav */
+header{position:sticky;top:0;z-index:50;background:rgba(246,247,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.3rem;color:var(--navy)}
+.brand img{height:40px;width:auto}
+.nav nav{display:flex;gap:28px}
+.nav nav a{text-decoration:none;font-weight:600;color:var(--muted)}
+.nav nav a:hover{color:var(--navy)}
+.menu-btn{display:none;background:none;border:0;font:inherit;font-weight:700;color:var(--navy);cursor:pointer}
+
+/* Hero */
+.hero{background:var(--navy);color:var(--white);padding:clamp(56px,8vw,96px) 0 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:end}
+.hero .kicker{color:var(--gold)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;max-width:14ch;margin-bottom:22px}
+.hero .lead{color:rgba(255,255,255,.8);margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:clamp(48px,7vw,88px)}
+.chips span{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:.9rem;color:rgba(255,255,255,.85)}
+.phone{background:var(--white);color:var(--ink);border-radius:32px 32px 0 0;padding:26px 24px 34px;box-shadow:0 -20px 60px rgba(0,0,0,.25);max-width:400px;justify-self:center;width:100%}
+.phone-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.phone-top small{color:var(--muted);font-weight:600}
+.phone-top img{width:44px;height:44px;object-fit:contain}
+.phone h3{font-size:1.25rem;margin-bottom:6px}
+.phone p{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.ring{--p:72;width:132px;aspect-ratio:1;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
+  background:conic-gradient(var(--leaf) calc(var(--p)*1%),var(--line) 0)}
+.ring b{width:104px;aspect-ratio:1;border-radius:50%;background:var(--white);display:grid;place-items:center;font-size:1.6rem}
+.phone .tag{display:block;text-align:center;font-weight:700;color:var(--navy)}
+
+/* What is */
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.video{border-radius:var(--r-lg);overflow:hidden;background:var(--navy);aspect-ratio:16/9}
+.video video{width:100%;height:100%;object-fit:cover}
+.video-cap{margin-top:14px;font-size:.95rem;color:var(--muted)}
+.video-cap b{color:var(--ink)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.pillar{border-top:4px solid var(--navy);padding-top:22px}
+.pillar:nth-child(2){border-color:var(--leaf)}
+.pillar:nth-child(3){border-color:var(--gold)}
+.pillar .n{font-weight:800;color:var(--muted);font-size:.9rem}
+.pillar h3{font-size:1.3rem;margin:6px 0 10px}
+.pillar p{color:var(--muted)}
+
+/* Platform preview */
+.platform{background:var(--white);border-block:1px solid var(--line)}
+.preview{display:grid;grid-template-columns:280px 1fr;gap:40px;margin-top:48px;align-items:start}
+.tabs{display:flex;flex-direction:column;gap:8px}
+.tabs button{text-align:left;font:inherit;background:none;border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 16px;cursor:pointer;color:var(--ink)}
+.tabs button b{display:block}
+.tabs button small{color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.tabs button[aria-selected="true"] small{color:rgba(255,255,255,.75)}
+.screen{display:none;background:var(--chalk);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+.screen.on{display:block}
+.screen-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.screen-head small{color:var(--leaf);font-weight:700}
+.screen-head h3{font-size:1.5rem}
+.badge{min-width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.stat{background:var(--white);border-radius:var(--r-md);padding:16px}
+.stat small{color:var(--muted);display:block}
+.stat b{font-size:1.5rem}
+.panel{background:var(--white);border-radius:var(--r-md);padding:18px;margin-bottom:12px}
+.panel h4{font-size:1rem;margin-bottom:10px}
+.panel p{color:var(--muted);font-size:.95rem}
+.row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.row:last-child{border-bottom:0}
+.row span{color:var(--muted)}
+.bar{height:8px;background:var(--line);border-radius:99px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--leaf);border-radius:99px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pager{display:flex;gap:10px;justify-content:flex-end;margin-top:14px}
+.pager button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--white);font-size:1.1rem;cursor:pointer}
+
+/* How it works */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px;counter-reset:s}
+.steps li{position:relative;padding:22px 18px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-md)}
+.steps li .n{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--gold);font-weight:800;margin-bottom:14px}
+.steps h4{font-size:1.05rem;margin-bottom:8px}
+.steps p{color:var(--muted);font-size:.93rem}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.features div{padding:18px 0;border-top:1px solid var(--line)}
+.features b{display:block}
+.features span{color:var(--muted);font-size:.95rem}
+
+/* Audiences */
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.aud article{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:26px}
+.aud .ico{width:48px;height:48px;border-radius:14px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:1.2rem;margin-bottom:16px}
+.aud h3{font-size:1.2rem;margin-bottom:8px}
+.aud p{color:var(--muted)}
+
+/* Momentum */
+.momentum{background:var(--navy);color:var(--white)}
+.momentum .kicker{color:var(--gold)}
+.momentum .lead{color:rgba(255,255,255,.8)}
+.mom-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.checks{list-style:none;margin-top:32px;display:grid;gap:18px}
+.checks li{display:grid;grid-template-columns:36px 1fr;gap:14px}
+.checks .tick{width:36px;height:36px;border-radius:50%;background:var(--leaf);display:grid;place-items:center;font-weight:800}
+.checks span{color:rgba(255,255,255,.75)}
+.card-app{background:var(--white);color:var(--ink);border-radius:var(--r-lg);padding:28px}
+.card-app small{color:var(--muted)}
+.card-app .big{font-size:3rem;font-weight:800;color:var(--leaf);line-height:1;margin:18px 0 6px}
+.card-app .cl{font-weight:700;font-size:.85rem;letter-spacing:.04em;color:var(--muted)}
+.card-app h3{margin:6px 0 4px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.tiles div{background:var(--chalk);border-radius:var(--r-sm);padding:14px}
+.tiles b{display:block}
+.tiles span{color:var(--muted);font-size:.9rem}
+
+/* Download */
+.download{text-align:center}
+.download h2,.download .lead{margin-inline:auto}
+.stores{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:32px}
+.store{display:flex;align-items:center;gap:14px;background:var(--ink);color:var(--white);border-radius:var(--r-md);padding:14px 22px;text-align:left;opacity:.9}
+.store .g{font-size:1.6rem;font-weight:800}
+.store small{display:block;color:rgba(255,255,255,.7)}
+.store em{display:block;font-style:normal;color:var(--gold);font-size:.85rem;font-weight:700}
+
+/* Journey */
+.journey-list{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;position:relative}
+.journey-list div{padding-top:28px;border-top:3px solid var(--navy)}
+.journey-list div:nth-child(4){border-color:var(--gold)}
+.journey-list h3{font-size:1.15rem;margin-bottom:8px}
+.journey-list p{color:var(--muted)}
+
+/* CTA + footer */
+.cta{background:var(--gold);text-align:center}
+.cta h2{margin-inline:auto}
+.cta p{max-width:50ch;margin:0 auto 28px;font-size:1.1rem}
+.cta .btn{background:var(--navy);color:var(--white)}
+footer{background:var(--ink);color:rgba(255,255,255,.75);padding:48px 0}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.foot nav{display:flex;flex-wrap:wrap;gap:22px}
+.foot nav a{text-decoration:none}
+.foot nav a:hover{color:var(--white)}
+.foot .brand{color:var(--white)}
+.copy{margin-top:28px;font-size:.9rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media (max-width:960px){
+  .hero-grid,.what-grid,.mom-grid,.preview{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .aud{grid-template-columns:1fr 1fr}
+  .features,.journey-list{grid-template-columns:1fr 1fr}
+  .tabs{flex-direction:row;overflow-x:auto;padding-bottom:6px}
+  .tabs button{flex:0 0 auto}
+}
+@media (max-width:640px){
+  .nav nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--chalk);flex-direction:column;padding:16px 24px;border-bottom:1px solid var(--line)}
+  .nav nav.open{display:flex}
+  .menu-btn{display:block}
+  .pillars,.steps,.aud,.features,.journey-list,.stats,.two{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="EduRance home">
+      <img src="assets/edurance-logo.png" alt="EduRance — Knowledge Today. Success Tomorrow." onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'EduRance'}))">
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu">
+      <a href="#audiences">Who it’s for</a>
+      <a href="#platform">Platform</a>
+      <a href="#journey">Learning journey</a>
+      <a href="#download">Download app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">A connected learning platform</p>
+      <h1>Every learner deserves a clear next step.</h1>
+      <p class="lead">EduRance is a connected learning app that helps people learn, track their progress and move towards their next education or career opportunity.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#how-it-works">Explore EduRance</a>
+        <a class="btn btn-ghost" href="#download">Download the app</a>
+      </div>
+      <div class="chips"><span>Practical learning</span><span>Visible progress</span><span>Human support</span></div>
+    </div>
+    <div class="phone" aria-label="EduRance app preview">
+      <div class="phone-top">
+        <small>Learn anywhere</small>
+        <img src="assets/edurance-mark.png" alt="EduRance books and graduation cap mark" onerror="this.remove()">
+      </div>
+      <h3>Your learning journey</h3>
+      <p>Keep building momentum—one meaningful step at a time.</p>
+      <div class="ring" style="--p:72"><b>72%</b></div>
+      <span class="tag">Progress with purpose</span>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="what-grid">
+      <div>
+        <p class="kicker">What is EduRance?</p>
+        <h2>One app for learning, progress and opportunity.</h2>
+        <p class="lead">EduRance brings the important parts of a learner’s journey into one connected place. Learners can access courses, complete activities and assessments, set personal goals, see their achievements and discover opportunities that match their progress. Parents, tutors, educators and institutions can provide better support because everyone has a clearer view of what the learner needs next.</p>
+      </div>
+      <div>
+        <div class="video">
+          <video src="assets/edurance-explainer.mp4" controls preload="metadata" playsinline>Your browser does not support the EduRance explainer video.</video>
+        </div>
+        <p class="video-cap"><b>Watch: The EduRance learner journey</b><br>A two-minute introduction to learning, progress and opportunity on EduRance.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><span class="n">01</span><h3>Learn with direction</h3><p>Access structured courses, lessons, practice activities and assessments designed to build useful knowledge and skills.</p></div>
+      <div class="pillar"><span class="n">02</span><h3>See your progress</h3><p>Set goals, monitor results, celebrate achievements and understand exactly where to focus next.</p></div>
+      <div class="pillar"><span class="n">03</span><h3>Find what comes next</h3><p>Discover suitable bursaries, learnerships, internships and career pathways from the same learning journey.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="platform" id="platform">
+  <div class="wrap">
+    <p class="kicker">Platform preview</p>
+    <h2>See how EduRance supports the complete journey</h2>
+    <p class="lead">Explore each part of the app—from the learner dashboard and personal goals to achievements, analytics and matched opportunities.</p>
+
+    <div class="preview">
+      <div class="tabs" role="tablist" aria-label="App screens">
+        <button role="tab" aria-selected="true" aria-controls="s0"><b>Main Dashboard</b><small>Your learning at a glance</small></button>
+        <button role="tab" aria-selected="false" aria-controls="s1"><b>My goals</b><small>Purpose into progress</small></button>
+        <button role="tab" aria-selected="false" aria-controls="s2"><b>Achievements</b><small>Celebrate every step</small></button>
+        <button role="tab" aria-selected="false" aria-controls="s3"><b>Courses & assessments</b><small>Keep learning</small></button>
+        <button role="tab" aria-selected="false" aria-controls="s4"><b>Progress analytics</b><small>See what is improving</small></button>
+        <button role="tab" aria-selected="false" aria-controls="s5"><b>Matched opportunities</b><small>Your next possibility</small></button>
+      </div>
+
+      <div>
+        <div class="screen on" id="s0" role="tabpanel">
+          <div class="screen-head"><div><small>Good morning, Lindiwe</small><h3>Your learning dashboard</h3></div><span class="badge">LM</span></div>
+          <div class="stats">
+            <div class="stat"><small>Overall progress</small><b>72%</b></div>
+            <div class="stat"><small>Learning streak</small><b>8 days</b></div>
+            <div class="stat"><small>Lessons complete</small><b>24</b></div>
+          </div>
+          <div class="two">
+            <div class="panel"><h4>Continue learning</h4><p><b>Digital Skills Foundations</b><br>Module 4 · Working with information</p></div>
+            <div class="panel"><h4>Coming up</h4>
+              <div class="row"><b>Live tutorial</b><span>12 · 14:00</span></div>
+              <div class="row"><b>Weekly quiz</b><span>Fri</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="screen" id="s1" role="tabpanel">
+          <div class="screen-head"><div><small>Purpose into progress</small><h3>My goals</h3></div><span class="badge">3</span></div>
+          <div class="panel"><h4>Active goals</h4>
+            <div class="row"><b>Complete digital skills pathway</b><span>72%</span></div><div class="bar"><i style="width:72%"></i></div>
+            <div class="row"><b>Study 4 hours every week</b><span>88%</span></div><div class="bar"><i style="width:88%"></i></div>
+            <div class="row"><b>Apply for a learnership</b><span>40%</span></div><div class="bar"><i style="width:40%"></i></div>
+          </div>
+          <div class="panel"><h4>Weekly activity</h4><p>4h 20m this week</p></div>
+        </div>
+
+        <div class="screen" id="s2" role="tabpanel">
+          <div class="screen-head"><div><small>Celebrate every step</small><h3>Achievements</h3></div><span class="badge">7</span></div>
+          <div class="stats">
+            <div class="stat"><small>8-day streak</small><b>Consistency star</b></div>
+            <div class="stat"><small>Top score</small><b>Quiz master</b></div>
+            <div class="stat"><small>Ahead of goal</small><b>Fast finisher</b></div>
+          </div>
+          <div class="panel"><h4>Digital Skills Foundations</h4><p>Certificate earned · 18 September 2026</p></div>
+          <div class="panel"><h4>Next milestone</h4><p>Complete two more lessons to unlock the Communication Champion badge.</p></div>
+        </div>
+
+        <div class="screen" id="s3" role="tabpanel">
+          <div class="screen-head"><div><small>Keep learning</small><h3>Courses & assessments</h3></div><span class="badge">5</span></div>
+          <div class="panel">
+            <div class="row"><b>Digital Skills Foundations</b><span>72%</span></div><p>9 of 12 lessons · next: information literacy</p><div class="bar"><i style="width:72%"></i></div>
+            <div class="row"><b>Workplace Communication</b><span>64%</span></div><p>4 of 8 lessons · next: presenting ideas</p><div class="bar"><i style="width:64%"></i></div>
+            <div class="row"><b>Career Readiness</b><span>33%</span></div><p>2 of 6 lessons · next: building your CV</p><div class="bar"><i style="width:33%"></i></div>
+          </div>
+          <div class="panel"><h4>Assessment ready</h4><p>Information Literacy · 10 questions · approximately 12 minutes</p></div>
+        </div>
+
+        <div class="screen" id="s4" role="tabpanel">
+          <div class="screen-head"><div><small>See what is improving</small><h3>Progress analytics</h3></div><span class="badge">↑</span></div>
+          <div class="stats">
+            <div class="stat"><small>Study time</small><b>18.5h</b></div>
+            <div class="stat"><small>Avg. score</small><b>81%</b></div>
+            <div class="stat"><small>Growth</small><b>+14%</b></div>
+          </div>
+          <div class="panel"><h4>Skills performance</h4>
+            <div class="row"><b>Digital literacy</b><span>88</span></div><div class="bar"><i style="width:88%"></i></div>
+            <div class="row"><b>Communication</b><span>76</span></div><div class="bar"><i style="width:76%"></i></div>
+            <div class="row"><b>Numeracy</b><span>67</span></div><div class="bar"><i style="width:67%"></i></div>
+            <div class="row"><b>Career skills</b><span>82</span></div><div class="bar"><i style="width:82%"></i></div>
+          </div>
+          <div class="panel"><h4>Your strength: digital literacy</h4><p>Focus next on numeracy practice to balance your skill profile.</p></div>
+        </div>
+
+        <div class="screen" id="s5" role="tabpanel">
+          <div class="screen-head"><div><small>Your next possibility</small><h3>Matched opportunities</h3></div><span class="badge">4</span></div>
+          <div class="panel">
+            <div class="row"><b>Future Skills Bursary</b><span>94% match</span></div><p>Education support · applications open</p>
+            <div class="row"><b>Digital Support Learnership</b><span>89% match</span></div><p>12 months · paid workplace experience</p>
+            <div class="row"><b>Community Tech Internship</b><span>82% match</span></div><p>6 months · entry-level experience</p>
+          </div>
+          <div class="panel"><h4>Build your opportunity profile</h4><p>Add your latest certificate to strengthen future matches.</p></div>
+        </div>
+
+        <div class="pager">
+          <button id="prev" aria-label="Previous screen">←</button>
+          <button id="next" aria-label="Next screen">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">From profile to possibility</p>
+    <h2>How EduRance works</h2>
+    <p class="lead">EduRance guides the learner through a connected five-step journey. Every activity, result and achievement helps make the next step clearer.</p>
+    <ol class="steps">
+      <li><span class="n">1</span><h4>Create a learner profile</h4><p>Add education history, interests, goals and areas where support is needed.</p></li>
+      <li><span class="n">2</span><h4>Follow a learning pathway</h4><p>Work through structured courses, lessons, activities and assessments connected to personal goals.</p></li>
+      <li><span class="n">3</span><h4>Measure real progress</h4><p>See completed work, assessment results, learning streaks, milestones and certificates in one place.</p></li>
+      <li><span class="n">4</span><h4>Receive focused support</h4><p>Parents, tutors and educators can use progress information to provide help where it matters most.</p></li>
+      <li><span class="n">5</span><h4>Move to the next opportunity</h4><p>Discover relevant bursaries, learnerships, internships, further study and career pathways.</p></li>
+    </ol>
+    <div class="features">
+      <div><b>One connected space</b><span>Learning and support together</span></div>
+      <div><b>Personal pathways</b><span>Guidance shaped around goals</span></div>
+      <div><b>Progress that’s visible</b><span>Clear milestones and feedback</span></div>
+      <div><b>Opportunity discovery</b><span>From learning into possibility</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="audiences" class="platform">
+  <div class="wrap">
+    <p class="kicker">Designed around people</p>
+    <h2>One platform. Many learning journeys.</h2>
+    <p class="lead">EduRance gives every person in the learning ecosystem a clearer way to participate, support progress and make confident decisions.</p>
+    <div class="aud">
+      <article><div class="ico">L</div><h3>Learners</h3><p>Access courses and assessments, set goals, build learning streaks, earn achievements and discover the next suitable opportunity.</p></article>
+      <article><div class="ico">P</div><h3>Parents</h3><p>See milestones, upcoming work and areas where support is needed, making it easier to encourage meaningful progress at home.</p></article>
+      <article><div class="ico">E</div><h3>Educators</h3><p>Organise learning, review assessment performance and identify which learners or topics require additional attention.</p></article>
+      <article><div class="ico">T</div><h3>Tutors</h3><p>Use learner goals and performance information to prepare focused sessions and measure improvement over time.</p></article>
+      <article><div class="ico">S</div><h3>Schools & training providers</h3><p>Manage learning pathways, engagement, assessments and learner progress from one connected institutional view.</p></article>
+      <article><div class="ico">I</div><h3>Colleges & universities</h3><p>Support students with structured resources, progress insight and clearer pathways into further study, work and development.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="momentum">
+  <div class="wrap mom-grid">
+    <div>
+      <p class="kicker">Built for momentum</p>
+      <h2>Learning feels better when everything connects.</h2>
+      <p class="lead">EduRance reduces the distance between content, support, feedback and opportunity. The result is a simpler experience that helps people focus on progress.</p>
+      <ul class="checks">
+        <li><span class="tick">✓</span><div><b>Interactive learning</b><br><span>Clear, engaging resources that make complex ideas easier to understand.</span></div></li>
+        <li><span class="tick">✓</span><div><b>Practice and assessment</b><br><span>Opportunities to check understanding, learn from feedback and improve.</span></div></li>
+        <li><span class="tick">✓</span><div><b>Progress and opportunity</b><br><span>A connected view of growth, goals and the possibilities that come next.</span></div></li>
+      </ul>
+    </div>
+    <div class="card-app">
+      <b>Welcome back</b><br><small>Your journey continues here</small>
+      <div class="big">72%</div>
+      <p class="cl">CONTINUE LEARNING</p>
+      <h3>Build your next skill</h3>
+      <small>Return to your current learning pathway.</small>
+      <div class="tiles">
+        <div><b>Practice</b><span>Strengthen understanding</span></div>
+        <div><b>Assessments</b><span>Check your progress</span></div>
+        <div><b>Opportunities</b><span>Explore what comes next</span></div>
+        <div><b>Support</b><span>Get guidance when needed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <div class="wrap">
+    <p class="kicker">Learn wherever you are</p>
+    <h2>EduRance in your pocket.</h2>
+    <p class="lead">Keep your learning journey close with the EduRance mobile app for Apple and Android devices.</p>
+    <div class="stores">
+      <div class="store" aria-label="Apple App Store, coming soon"><span class="g"></span><div><small>Download on the</small><b>Apple App Store</b><em>Coming soon</em></div></div>
+      <div class="store" aria-label="Google Play, coming soon"><span class="g">▶</span><div><small>Get it on</small><b>Google Play</b><em>Coming soon</em></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="platform">
+  <div class="wrap">
+    <p class="kicker">A journey with direction</p>
+    <h2>From learning today to success tomorrow.</h2>
+    <p class="lead">EduRance turns a big ambition into a sequence of understandable, achievable steps.</p>
+    <div class="journey-list">
+      <div><h3>Understand your goal</h3><p>Start with where you are, what you need and where you want to go.</p></div>
+      <div><h3>Follow your pathway</h3><p>Work through focused content and activities designed around progress.</p></div>
+      <div><h3>Measure growth</h3><p>Use practice, feedback and milestones to see what is improving.</p></div>
+      <div><h3>Reach the next opportunity</h3><p>Connect stronger knowledge and skills to meaningful future choices.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--navy)">Your journey can start here</p>
+    <h2>Knowledge today. Success tomorrow.</h2>
+    <p>Explore a learning experience built to turn potential into steady progress.</p>
+    <a class="btn" href="#home">Explore EduRance</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#home"><img src="assets/edurance-logo.png" alt="EduRance" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'EduRance'}))"></a>
+      <nav>
+        <a href="#audiences">Who it’s for</a>
+        <a href="#platform">Platform</a>
+        <a href="#download">Download app</a>
+        <a href="#journey">Learning journey</a>
+      </nav>
+    </div>
+    <div class="copy"><span>© 2026 EduRance. All rights reserved.</span><span>Knowledge Today. Success Tomorrow.</span></div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+  menuBtn.addEventListener('click',()=>{const o=menu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');menuBtn.setAttribute('aria-expanded',false)}));
+
+  // Platform preview tabs
+  const tabs=[...document.querySelectorAll('[role=tab]')],screens=[...document.querySelectorAll('.screen')];
+  let cur=0;
+  function show(i){
+    cur=(i+tabs.length)%tabs.length;
+    tabs.forEach((t,j)=>t.setAttribute('aria-selected',j===cur));
+    screens.forEach((s,j)=>s.classList.toggle('on',j===cur));
+  }
+  tabs.forEach((t,i)=>t.addEventListener('click',()=>show(i)));
+  document.getElementById('prev').addEventListener('click',()=>show(cur-1));
+  document.getElementById('next').addEventListener('click',()=>show(cur+1));
+</script>
+</body>
+</html>
