@@ -582,3 +582,11 @@ a.store-badge:focus-visible { outline: 3px solid var(--green); outline-offset: 3
 }
 
 .eyebrow::before { content: none; }
+
+/* Learner journey page */
+.journey-more { margin: 32px 0 0; text-align: center; }
+.page-journey .journey { padding-top: 64px; }
+.page-journey .section-head h1 { margin: 10px 0 12px; font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.1; letter-spacing: -0.03em; }
+.page-journey .section-head p { margin: 0 auto; max-width: 600px; }
+.nav-links a[aria-current="page"] { color: var(--purple); }
+.journey-more .btn { color: var(--ink); }
