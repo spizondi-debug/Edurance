@@ -572,3 +572,12 @@ a.store-badge:focus-visible { outline: 3px solid var(--green); outline-offset: 3
   .hero { padding-top: 32px; }
   .hero-grid { gap: 36px; }
 }
+
+/* Fix: keep the product tour inside the screen on mobile */
+.visual { grid-template-columns: minmax(0, 1fr); }
+.product-tour { min-width: 0; max-width: 100%; justify-self: center; }
+.dashboard { grid-template-columns: 70px minmax(0, 1fr); }
+@media (max-width: 620px) {
+  .dashboard { grid-template-columns: 48px minmax(0, 1fr); }
+  .tour-heading { padding-top: 64px; }
+}
