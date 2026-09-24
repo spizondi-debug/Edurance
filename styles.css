@@ -580,3 +580,5 @@ a.store-badge:focus-visible { outline: 3px solid var(--green); outline-offset: 3
 @media (max-width: 620px) {
   .dashboard { grid-template-columns: 48px minmax(0, 1fr); }
 }
+
+.eyebrow::before { content: none; }
