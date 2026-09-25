@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=20260926g">
+  <link rel="stylesheet" href="styles.css?v=20260926i">
 </head>
 <body>
   <header>
@@ -46,7 +46,13 @@
       <div class="shell hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Free for Grade 8–12 learners in South Africa</span>
-          <h1 class="h1-long">Know your APS. Find your course. <span>Get funded.</span></h1>
+          <h1 class="h1-long hero-rotator" aria-label="Know your APS. Find your course. Get funded.">
+            <span class="hl is-active">Know your APS. Find your course. <span>Get funded.</span></span>
+            <span class="hl" aria-hidden="true">Your marks. Your options. <span>Your plan.</span></span>
+            <span class="hl" aria-hidden="true">Find bursaries <span>before they close.</span></span>
+            <span class="hl" aria-hidden="true">Study smarter with <span>past papers and AI help.</span></span>
+          </h1>
+          <div class="hl-dots" role="tablist" aria-label="Choose headline"><button type="button" class="on" aria-label="Headline 1"></button><button type="button" aria-label="Headline 2"></button><button type="button" aria-label="Headline 3"></button><button type="button" aria-label="Headline 4"></button></div>
           <p>EduRance helps learners calculate their APS, see which courses they qualify for, discover careers that suit them and study smarter with AI tutors, past papers and mock exams, with goals, badges and deadline reminders to keep them on track.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#how-it-works">Explore EduRance</a>
@@ -291,4 +297,19 @@
 })();
 </script>
 <script src="assets/stats.js" defer></script>
+<script>
+(function(){
+  var h=document.querySelector('.hero-rotator'); if(!h) return;
+  var items=[].slice.call(h.querySelectorAll('.hl')), dots=[].slice.call(document.querySelectorAll('.hl-dots button')), i=0, t;
+  function fit(){ var m=0; items.forEach(function(el){ el.style.position='static'; m=Math.max(m,el.offsetHeight); el.style.position=''; }); h.style.minHeight=m+'px'; }
+  function show(n){ items[i].classList.remove('is-active'); dots[i].classList.remove('on'); i=(n+items.length)%items.length; items[i].classList.add('is-active'); dots[i].classList.add('on'); }
+  function start(){ stop(); if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; t=setInterval(function(){ show(i+1); },4500); }
+  function stop(){ if(t) clearInterval(t); }
+  dots.forEach(function(d,n){ d.addEventListener('click',function(){ show(n); start(); }); });
+  h.addEventListener('mouseenter',stop); h.addEventListener('mouseleave',start);
+  document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+  fit(); window.addEventListener('resize',fit); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+  start();
+})();
+</script>
 </body></html>

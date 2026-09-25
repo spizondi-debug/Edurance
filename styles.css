@@ -729,3 +729,14 @@ pre.code { overflow-x: auto; padding: 14px 16px; border-radius: 14px; background
 .live-count { margin: 14px 0 0; font-size: 0.92rem; font-weight: 700; color: var(--ink); }
 .live-count b { color: var(--purple); font-size: 1.05rem; }
 .live-count[hidden] { display: none; }
+/* Rotating hero headline */
+.hero-rotator { position: relative; }
+.hero-rotator .hl { position: absolute; left: 0; top: 0; width: 100%; opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; pointer-events: none; }
+.hero-rotator .hl.is-active { position: relative; opacity: 1; transform: none; pointer-events: auto; }
+.hl-dots { display: flex; gap: 8px; margin: 14px 0 4px; }
+.hl-dots button { width: 26px; height: 6px; padding: 0; border: 0; border-radius: 99px; background: #D9D2EE; cursor: pointer; box-sizing: content-box; border-top: 9px solid transparent; border-bottom: 9px solid transparent; background-clip: content-box; transition: background-color .3s; }
+.hl-dots button.on { background-color: var(--purple); }
+@media (max-width: 940px) { .hl-dots { justify-content: center; } .hero-rotator .hl { left: 0; right: 0; } }
+@media (prefers-reduced-motion: reduce) { .hero-rotator .hl { transition: none; } }
+.hero h1 .hl { color: var(--ink); }
+.hero h1 .hl span { color: var(--purple); }
