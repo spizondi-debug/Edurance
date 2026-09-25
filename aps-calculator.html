@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="en-ZA"><head><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free APS Calculator (South Africa) | EduRance</title>
+  <meta name="description" content="Free APS calculator for South African learners. Enter your marks to get your Admission Point Score from your best six subjects, excluding Life Orientation.">
+  <link rel="canonical" href="https://spizondi-debug.github.io/Edurance/aps-calculator.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://spizondi-debug.github.io/Edurance/#org", "name": "EduRance", "url": "https://spizondi-debug.github.io/Edurance/", "email": "info@edurance.co.za", "parentOrganization": {"@type": "Organization", "name": "Prestige Tutelage (Pty) Ltd"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://spizondi-debug.github.io/Edurance/"}, {"@type": "ListItem", "position": 2, "name": "APS calculator", "item": "https://spizondi-debug.github.io/Edurance/aps-calculator.html"}]}, {"@type": "WebApplication", "name": "EduRance APS Calculator", "url": "https://spizondi-debug.github.io/Edurance/aps-calculator.html", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "inLanguage": "en-ZA", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "ZAR"}, "publisher": {"@id": "https://spizondi-debug.github.io/Edurance/#org"}}]}</script>
+  <link rel="icon" href="assets/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="EduRance">
+  <meta property="og:title" content="Free APS Calculator (South Africa) | EduRance">
+  <meta property="og:description" content="Free APS calculator for South African learners. Enter your marks to get your Admission Point Score from your best six subjects, excluding Life Orientation.">
+  <meta property="og:url" content="https://spizondi-debug.github.io/Edurance/aps-calculator.html">
+  <meta property="og:image" content="https://spizondi-debug.github.io/Edurance/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free APS Calculator (South Africa) | EduRance">
+  <meta name="twitter:description" content="Free APS calculator for South African learners. Enter your marks to get your Admission Point Score from your best six subjects, excluding Life Orientation.">
+  <meta name="twitter:image" content="https://spizondi-debug.github.io/Edurance/assets/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260925g">
+</head>
+<body>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="index.html" aria-label="EduRance home">
+        <img src="assets/edurance-logo.webp" width="480" height="163" alt="EduRance — Knowledge Today. Success Tomorrow." fetchpriority="high">
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html#platform">Platform</a>
+        <a href="journey.html">Learning journey</a>
+        <a href="aps-calculator.html" aria-current="page">APS calculator</a>
+        <a class="btn btn-primary" href="https://eduranceapp.com/downloads/">Download app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-page">
+    <section class="content-hero">
+      <div class="shell narrow">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>APS calculator</span></nav>
+        <h1>Free APS calculator for South African learners</h1>
+        <p class="lead">Enter your subject marks to work out your Admission Point Score (APS) in seconds. It works for Grade 10, 11 and 12 learners.</p>
+        <p class="updated">Updated 25 September 2026</p>
+      </div>
+    </section>
+    <section class="content-body">
+      <div class="shell narrow prose">
+        <div class="calc" id="calc">
+          <p class="calc-note">Enter your latest mark (%) for each subject. Leave a row empty if you don't take that subject.</p>
+          <div class="calc-rows" id="rows"></div>
+          <button type="button" class="btn btn-secondary calc-add" id="add">+ Add a subject</button>
+          <div class="calc-result" id="result" aria-live="polite">
+            <div><span class="calc-label">Your APS</span><strong id="aps">0</strong><span class="calc-of">out of 42</span></div>
+            <p id="summary">Add your marks to see your APS.</p>
+          </div>
+        </div>
+
+        <h2>How this calculator works</h2>
+        <p>Each subject mark is turned into an NSC achievement level from 1 to 7. Your APS is the total of your <strong>best six subjects</strong>. <strong>Life Orientation is left out</strong>, as most South African universities do. The highest possible score is 42.</p>
+        <table class="aps-table">
+          <thead><tr><th>Your mark</th><th>NSC level</th><th>APS points</th></tr></thead>
+          <tbody>
+            <tr><td>80–100%</td><td>7 (Outstanding)</td><td>7</td></tr>
+            <tr><td>70–79%</td><td>6 (Meritorious)</td><td>6</td></tr>
+            <tr><td>60–69%</td><td>5 (Substantial)</td><td>5</td></tr>
+            <tr><td>50–59%</td><td>4 (Adequate)</td><td>4</td></tr>
+            <tr><td>40–49%</td><td>3 (Moderate)</td><td>3</td></tr>
+            <tr><td>30–39%</td><td>2 (Elementary)</td><td>2</td></tr>
+            <tr><td>0–29%</td><td>1 (Not achieved)</td><td>1</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Important: universities don't all count APS the same way</h2>
+        <p>This calculator uses the standard scale. Some universities and faculties use their own version: they may add points for high marks, count Life Orientation, or use percentages instead. Your APS is also only one requirement. Most courses also set minimum marks for specific subjects, such as Mathematics or English.</p>
+        <p>Always check the admission rules on the university's own website before you apply. In the EduRance app, you can see which courses match your APS <em>and</em> your subject marks.</p>
+
+        <h2>Which marks should I use?</h2>
+        <p>In Grade 12, universities usually make provisional offers based on your <strong>Grade 11 final</strong> results or your <strong>Grade 12 June</strong> results. Your final place depends on your NSC results. In Grade 10 or 11, use your latest report to see where you stand and which subjects to work on.</p>
+<aside class="related"><h2>Keep going</h2><ul><li><a href="how-to-calculate-aps.html">How to calculate your APS, step by step</a></li><li><a href="nsfas-2027.html">NSFAS 2027: who qualifies and how to apply</a></li><li><a href="bursaries-2027.html">Bursaries for 2027: how to find and apply</a></li></ul></aside>
+      </div>
+    </section>
+
+    <section class="cta-wrap" id="explore">
+      <div class="shell">
+        <div class="cta">
+          <div><span class="eyebrow" style="color:#94dc64">Your journey can start here</span><h2>Knowledge today. Success tomorrow.</h2><p>Start with your APS and see where your marks can take you.</p></div>
+          <a class="btn" href="https://eduranceapp.com">Open EduRance</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <img src="assets/edurance-logo.webp" width="480" height="163" alt="EduRance" loading="lazy" decoding="async">
+        <nav class="footer-links" aria-label="Footer navigation"><a href="index.html#platform">Platform</a><a href="index.html#download">Download app</a><a href="journey.html">Learning journey</a><a href="aps-calculator.html">APS calculator</a><a href="how-to-calculate-aps.html">How APS works</a><a href="nsfas-2027.html">NSFAS 2027</a><a href="bursaries-2027.html">Bursaries 2027</a><a href="https://eduranceapp.com/privacy">Privacy policy</a><a href="mailto:info@edurance.co.za">info@edurance.co.za</a></nav>
+      </div>
+      <div class="copyright"><span>© 2026 EduRance. Built by Prestige Tutelage (Pty) Ltd, a SAQA and QCTO-accredited training provider.</span><span>Knowledge Today. Success Tomorrow.</span></div>
+    </div>
+  </footer>
+<script>
+(function(){
+  var SUBJECTS=["English Home Language","English First Additional Language","Afrikaans Home Language","Afrikaans First Additional Language","isiZulu Home Language","isiXhosa Home Language","Sesotho Home Language","Setswana Home Language","Sepedi Home Language","Xitsonga Home Language","Tshivenda Home Language","siSwati Home Language","isiNdebele Home Language","isiZulu First Additional Language","isiXhosa First Additional Language","Mathematics","Mathematical Literacy","Technical Mathematics","Physical Sciences","Technical Sciences","Life Sciences","Accounting","Business Studies","Economics","Geography","History","Agricultural Sciences","Computer Applications Technology","Information Technology","Engineering Graphics and Design","Tourism","Consumer Studies","Hospitality Studies","Visual Arts","Dramatic Arts","Music","Religion Studies","Life Orientation"];
+  var DEF=["English Home Language","","Mathematics","Life Orientation","","",""];
+  var rows=document.getElementById('rows');
+  function level(p){return p>=80?7:p>=70?6:p>=60?5:p>=50?4:p>=40?3:p>=30?2:1;}
+  function addRow(name){
+    var r=document.createElement('div');r.className='calc-row';
+    var sel=document.createElement('select');sel.setAttribute('aria-label','Subject');
+    var o=document.createElement('option');o.value='';o.textContent='Choose a subject';sel.appendChild(o);
+    SUBJECTS.forEach(function(s){var x=document.createElement('option');x.value=s;x.textContent=s;if(s===name)x.selected=true;sel.appendChild(x);});
+    var inp=document.createElement('input');inp.type='number';inp.min=0;inp.max=100;inp.inputMode='numeric';inp.placeholder='%';inp.setAttribute('aria-label','Mark in percent');
+    var lv=document.createElement('span');lv.className='calc-level';
+    r.appendChild(sel);r.appendChild(inp);r.appendChild(lv);rows.appendChild(r);
+    sel.addEventListener('change',calc);inp.addEventListener('input',calc);
+  }
+  function calc(){
+    var items=[];
+    [].forEach.call(rows.children,function(r){
+      var s=r.querySelector('select').value,v=r.querySelector('input').value,lv=r.querySelector('.calc-level');
+      if(v===''||isNaN(+v)){lv.textContent='';r.classList.remove('lo','counted');return;}
+      var p=Math.max(0,Math.min(100,+v)),l=level(p);
+      items.push({r:r,s:s,l:l,lo:/life orientation/i.test(s)});
+    });
+    var pool=items.filter(function(i){return !i.lo;}).sort(function(a,b){return b.l-a.l;});
+    var best=pool.slice(0,6),total=best.reduce(function(t,i){return t+i.l;},0);
+    items.forEach(function(i){
+      var lv=i.r.querySelector('.calc-level');
+      i.r.classList.toggle('lo',i.lo);
+      var c=best.indexOf(i)>-1;i.r.classList.toggle('counted',c);
+      lv.textContent=i.lo?'Not counted':('Level '+i.l+(c?'':' · not in best 6'));
+    });
+    document.getElementById('aps').textContent=total;
+    var n=pool.length,msg;
+    if(!items.length)msg='Add your marks to see your APS.';
+    else if(n<6)msg='You have entered '+n+' subject'+(n===1?'':'s')+' that count. Add '+(6-n)+' more for a full APS.';
+    else msg='This is your total from your best six subjects, excluding Life Orientation. Check each university\'s own rules before applying.';
+    document.getElementById('summary').textContent=msg;
+  }
+  DEF.forEach(addRow);
+  document.getElementById('add').addEventListener('click',function(){addRow('');});
+})();
+</script>
+</body></html>

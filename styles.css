@@ -599,3 +599,55 @@ p.dash-title { font-weight: 800; }
 .lj > li:nth-child(4n+2), .lj > li:nth-child(4n+3) { background: rgba(20, 174, 173, 0.11); border-color: rgba(20, 174, 173, 0.28); }
 .lj > li.lj-wide { background: rgba(95, 190, 35, 0.12); border-color: rgba(95, 190, 35, 0.3); }
 .lj p { color: #46536d; }
+
+/* ---------- Content pages (APS, NSFAS, bursaries) ---------- */
+.content-page section { padding: 0; }
+.shell.narrow { width: min(780px, 100% - 40px); }
+.content-hero { padding: 56px 0 28px !important; background: linear-gradient(135deg, rgb(251, 250, 255) 0%, rgb(247, 251, 255) 52%, rgb(248, 255, 243) 100%); }
+.content-hero h1 { margin: 10px 0 14px; font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.08; letter-spacing: -0.035em; }
+.content-hero .lead { margin: 0; font-size: 1.1rem; color: var(--muted); }
+.content-hero .updated { margin: 14px 0 0; font-size: 0.8rem; color: var(--muted); }
+.crumbs { font-size: 0.82rem; color: var(--muted); }
+.crumbs a { color: var(--purple); font-weight: 700; }
+.content-body { padding: 36px 0 70px !important; }
+.prose h2 { margin: 42px 0 12px; font-size: 1.45rem; line-height: 1.25; letter-spacing: -0.02em; }
+.prose p, .prose li { color: #3b4a66; font-size: 1rem; }
+.prose ul, .prose ol { padding-left: 22px; }
+.prose li { margin-bottom: 8px; }
+.prose a { color: var(--purple); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.prose .small { font-size: 0.85rem; color: var(--muted); }
+.callout { margin: 22px 0; padding: 16px 18px; border-left: 4px solid var(--purple); border-radius: 12px; background: rgba(100, 36, 200, 0.07); }
+.aps-table { width: 100%; margin: 14px 0 6px; border-collapse: collapse; font-size: 0.95rem; }
+.aps-table th, .aps-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+.aps-table th { background: var(--soft); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.aps-table tr.total td { font-weight: 800; color: var(--ink); background: rgba(95, 190, 35, 0.12); }
+.keyfacts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 6px 0 10px; }
+.keyfacts div { padding: 16px; border-radius: 16px; background: rgba(20, 174, 173, 0.11); border: 1px solid rgba(20, 174, 173, 0.28); }
+.keyfacts span { display: block; font-size: 0.8rem; color: var(--muted); }
+.keyfacts strong { font-size: 1.1rem; }
+.related { margin-top: 48px; padding: 22px 24px; border-radius: 20px; background: var(--soft); border: 1px solid var(--line); }
+.related h2 { margin: 0 0 10px; font-size: 1.1rem; }
+.related ul { margin: 0; padding-left: 20px; }
+/* calculator */
+.calc { padding: 22px; border-radius: 24px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.calc-note { margin: 0 0 14px; font-size: 0.92rem; }
+.calc-row { display: grid; grid-template-columns: minmax(0, 1fr) 96px 150px; gap: 10px; align-items: center; margin-bottom: 10px; }
+.calc-row select, .calc-row input { width: 100%; min-height: 48px; padding: 0 12px; border: 1px solid var(--line); border-radius: 12px; font: inherit; font-size: 16px; color: var(--ink); background: #fff; }
+.calc-row select:focus, .calc-row input:focus { outline: 2px solid var(--purple); outline-offset: 1px; }
+.calc-level { font-size: 0.82rem; font-weight: 700; color: var(--muted); }
+.calc-row.counted .calc-level { color: var(--purple); }
+.calc-row.lo .calc-level { color: var(--orange); }
+.calc-add { margin: 4px 0 18px; min-height: 44px; color: var(--ink); }
+.calc-result { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; padding: 18px 20px; border-radius: 18px; background: var(--ink); color: #fff; }
+.calc-result strong { display: block; font-size: 2.8rem; line-height: 1; }
+.calc-label, .calc-of { display: block; font-size: 0.78rem; color: rgb(174, 187, 210); }
+.calc-result p { margin: 0; color: rgb(213, 222, 238); font-size: 0.92rem; }
+@media (max-width: 620px) {
+  .keyfacts { grid-template-columns: 1fr; }
+  .calc { padding: 16px; }
+  .calc-row { grid-template-columns: minmax(0, 1fr) 84px; }
+  .calc-level { grid-column: 1 / -1; margin-top: -4px; }
+  .calc-result { grid-template-columns: 1fr; gap: 8px; }
+}
+.hero-link { margin: 18px 0 0; font-weight: 800; }
+.hero-link a { color: var(--purple); text-decoration: underline; text-underline-offset: 4px; }
