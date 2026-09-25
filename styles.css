@@ -724,3 +724,5 @@ pre.code { overflow-x: auto; padding: 14px 16px; border-radius: 14px; background
 .flow-more { margin-top: 14px; }
 .flow-more a { color: #9bdf70; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
 .tag-two { bottom: -18px; }
+.hero-cred { margin: 14px 0 0; font-size: 0.85rem; color: var(--muted); }
+.hero-cred a { color: var(--ink); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
