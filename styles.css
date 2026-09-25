@@ -665,3 +665,25 @@ p.dash-title { font-weight: 800; }
 .status.closing { background: rgba(255, 158, 22, 0.18); color: #8a4f00; }
 .status.closed { background: #eef0f5; color: #6b7690; }
 .prose h3 { margin: 26px 0 6px; font-size: 1.1rem; }
+/* Mobile polish */
+.tour-dot { box-sizing: content-box; border: 9px solid transparent; background-clip: content-box; margin: -9px -2px; }
+.crumbs a { display: inline-block; padding: 8px 0; }
+.hero-link a { display: inline-block; padding: 8px 0; }
+@media (max-width: 480px) {
+  .prose .aps-table { table-layout: fixed; font-size: 0.86rem; }
+  .prose .aps-table th, .prose .aps-table td { padding: 8px 7px; word-wrap: break-word; overflow-wrap: anywhere; }
+  .prose .aps-table th { font-size: 0.7rem; letter-spacing: 0.02em; }
+  .footer-links { gap: 12px 18px; }
+  .footer-links a { padding: 4px 0; }
+  .content-hero h1 { font-size: 1.9rem; }
+}
+.nav-links .btn { white-space: nowrap; }
+@media (max-width: 620px) {
+  .tag-two { bottom: -14px; right: 10px; }
+  .visual-card { margin-bottom: 18px; }
+}
+@media (max-width: 380px) {
+  .brand img { width: 148px; }
+  .nav-links .btn { padding-inline: 14px; font-size: 0.86rem; }
+}
+pre.code { overflow-x: auto; padding: 14px 16px; border-radius: 14px; background: var(--ink); color: #d6e2ff; font-size: 0.8rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; }

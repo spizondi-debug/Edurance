@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en-ZA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APS Calculator | EduRance</title><meta name="robots" content="noindex"><link rel="canonical" href="https://spizondi-debug.github.io/Edurance/aps-calculator.html">
+<style>
+:root{--ink:#071b3f;--muted:#52627d;--purple:#6424c8;--teal:#14aead;--orange:#ff9e16;--line:#dde3ef;--soft:#f6f7fc;--shadow:none}
+*{box-sizing:border-box} body{margin:0;padding:10px;font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;border:1px solid var(--line);background:#fff;font-weight:800;cursor:pointer;padding:0 16px}
+/* calculator */
+.calc { padding: 22px; border-radius: 24px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.calc-note { margin: 0 0 14px; font-size: 0.92rem; }
+.calc-row { display: grid; grid-template-columns: minmax(0, 1fr) 96px 150px; gap: 10px; align-items: center; margin-bottom: 10px; }
+.calc-row select, .calc-row input { width: 100%; min-height: 48px; padding: 0 12px; border: 1px solid var(--line); border-radius: 12px; font: inherit; font-size: 16px; color: var(--ink); background: #fff; }
+.calc-row select:focus, .calc-row input:focus { outline: 2px solid var(--purple); outline-offset: 1px; }
+.calc-level { font-size: 0.82rem; font-weight: 700; color: var(--muted); }
+.calc-row.counted .calc-level { color: var(--purple); }
+.calc-row.lo .calc-level { color: var(--orange); }
+.calc-add { margin: 4px 0 18px; min-height: 44px; color: var(--ink); }
+.calc-result { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; padding: 18px 20px; border-radius: 18px; background: var(--ink); color: #fff; }
+.calc-result strong { display: block; font-size: 2.8rem; line-height: 1; }
+.calc-label, .calc-of { display: block; font-size: 0.78rem; color: rgb(174, 187, 210); }
+.calc-result p { margin: 0; color: rgb(213, 222, 238); font-size: 0.92rem; }
+
+@media (max-width:520px){.calc-row{grid-template-columns:minmax(0,1fr) 80px}.calc-level{grid-column:1/-1;margin-top:-4px}.calc-result{grid-template-columns:1fr;gap:6px}}
+.pb{margin:10px 2px 0;font-size:12px;color:var(--muted)} .pb a{color:var(--purple);font-weight:800}
+h1{font-size:18px;margin:0 0 10px}
+</style></head><body>
+<div class="calc" id="calc"><h1>APS calculator</h1>
+<p class="calc-note">Enter your marks (%) — your best six subjects count, excluding Life Orientation.</p>
+<div class="calc-rows" id="rows"></div>
+<button type="button" class="btn calc-add" id="add">+ Add a subject</button>
+<div class="calc-result" id="result" aria-live="polite"><div><span class="calc-label">Your APS</span><strong id="aps">0</strong><span class="calc-of">out of 42</span></div><p id="summary">Add your marks to see your APS.</p></div>
+</div>
+<p class="pb">Free tool by <a href="https://spizondi-debug.github.io/Edurance/" target="_blank" rel="noopener">EduRance</a> · <a href="https://spizondi-debug.github.io/Edurance/what-can-i-study-with-my-aps.html" target="_blank" rel="noopener">What can I study with my APS?</a></p>
+<script>
+(function(){
+  var SUBJECTS=["English Home Language","English First Additional Language","Afrikaans Home Language","Afrikaans First Additional Language","isiZulu Home Language","isiXhosa Home Language","Sesotho Home Language","Setswana Home Language","Sepedi Home Language","Xitsonga Home Language","Tshivenda Home Language","siSwati Home Language","isiNdebele Home Language","isiZulu First Additional Language","isiXhosa First Additional Language","Mathematics","Mathematical Literacy","Technical Mathematics","Physical Sciences","Technical Sciences","Life Sciences","Accounting","Business Studies","Economics","Geography","History","Agricultural Sciences","Computer Applications Technology","Information Technology","Engineering Graphics and Design","Tourism","Consumer Studies","Hospitality Studies","Visual Arts","Dramatic Arts","Music","Religion Studies","Life Orientation"];
+  var DEF=["English Home Language","","Mathematics","Life Orientation","","",""];
+  var rows=document.getElementById('rows');
+  function level(p){return p>=80?7:p>=70?6:p>=60?5:p>=50?4:p>=40?3:p>=30?2:1;}
+  function addRow(name){
+    var r=document.createElement('div');r.className='calc-row';
+    var sel=document.createElement('select');sel.setAttribute('aria-label','Subject');
+    var o=document.createElement('option');o.value='';o.textContent='Choose a subject';sel.appendChild(o);
+    SUBJECTS.forEach(function(s){var x=document.createElement('option');x.value=s;x.textContent=s;if(s===name)x.selected=true;sel.appendChild(x);});
+    var inp=document.createElement('input');inp.type='number';inp.min=0;inp.max=100;inp.inputMode='numeric';inp.placeholder='%';inp.setAttribute('aria-label','Mark in percent');
+    var lv=document.createElement('span');lv.className='calc-level';
+    r.appendChild(sel);r.appendChild(inp);r.appendChild(lv);rows.appendChild(r);
+    sel.addEventListener('change',calc);inp.addEventListener('input',calc);
+  }
+  function calc(){
+    var items=[];
+    [].forEach.call(rows.children,function(r){
+      var s=r.querySelector('select').value,v=r.querySelector('input').value,lv=r.querySelector('.calc-level');
+      if(v===''||isNaN(+v)){lv.textContent='';r.classList.remove('lo','counted');return;}
+      var p=Math.max(0,Math.min(100,+v)),l=level(p);
+      items.push({r:r,s:s,l:l,lo:/life orientation/i.test(s)});
+    });
+    var pool=items.filter(function(i){return !i.lo;}).sort(function(a,b){return b.l-a.l;});
+    var best=pool.slice(0,6),total=best.reduce(function(t,i){return t+i.l;},0);
+    items.forEach(function(i){
+      var lv=i.r.querySelector('.calc-level');
+      i.r.classList.toggle('lo',i.lo);
+      var c=best.indexOf(i)>-1;i.r.classList.toggle('counted',c);
+      lv.textContent=i.lo?'Not counted':('Level '+i.l+(c?'':' · not in best 6'));
+    });
+    document.getElementById('aps').textContent=total;
+    var n=pool.length,msg;
+    if(!items.length)msg='Add your marks to see your APS.';
+    else if(n<6)msg='You have entered '+n+' subject'+(n===1?'':'s')+' that count. Add '+(6-n)+' more for a full APS.';
+    else msg='This is your total from your best six subjects, excluding Life Orientation. Check each university\'s own rules before applying.';
+    document.getElementById('summary').textContent=msg;
+  }
+  DEF.forEach(addRow);
+  document.getElementById('add').addEventListener('click',function(){addRow('');});
+})();
+</script>
+</body></html>
