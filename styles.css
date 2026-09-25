@@ -590,3 +590,6 @@ a.store-badge:focus-visible { outline: 3px solid var(--green); outline-offset: 3
 .page-journey .section-head p { margin: 0 auto; max-width: 600px; }
 .nav-links a[aria-current="page"] { color: var(--purple); }
 .journey-more .btn { color: var(--ink); }
+.lj h2 { margin: 2px 0 6px; font-size: 1.02rem; line-height: 1.3; }
+.brand img, .footer-grid img, .hero-mark img { height: auto; }
+p.dash-title { font-weight: 800; }
