@@ -696,3 +696,15 @@ pre.code { overflow-x: auto; padding: 14px 16px; border-radius: 14px; background
   .brand img { width: 138px; }
   .nav-links .btn { padding-inline: 12px; font-size: 0.82rem; min-height: 40px; }
 }
+/* Stacked tables on phones */
+@media (max-width: 620px) {
+  .aps-table.stack, .aps-table.stack tbody, .aps-table.stack tr, .aps-table.stack td { display: block; width: 100%; }
+  .aps-table.stack { min-width: 0; table-layout: auto; }
+  .aps-table.stack thead { display: none; }
+  .aps-table.stack tr { margin-bottom: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+  .aps-table.stack td { padding: 4px 0; border: 0; overflow-wrap: normal; word-wrap: normal; }
+  .aps-table.stack td::before { content: attr(data-label); display: block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .aps-table.stack td:first-child { font-weight: 800; font-size: 1rem; }
+  .aps-table.stack td:first-child::before { display: none; }
+  .table-wrap { overflow-x: visible; }
+}
