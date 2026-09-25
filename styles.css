@@ -726,3 +726,6 @@ pre.code { overflow-x: auto; padding: 14px 16px; border-radius: 14px; background
 .tag-two { bottom: -18px; }
 .hero-cred { margin: 14px 0 0; font-size: 0.85rem; color: var(--muted); }
 .hero-cred a { color: var(--ink); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.live-count { margin: 14px 0 0; font-size: 0.92rem; font-weight: 700; color: var(--ink); }
+.live-count b { color: var(--purple); font-size: 1.05rem; }
+.live-count[hidden] { display: none; }

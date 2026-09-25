@@ -69,6 +69,7 @@ h1{font-size:18px;margin:0 0 10px}
     else if(n<6)msg='You have entered '+n+' subject'+(n===1?'':'s')+' that count. Add '+(6-n)+' more for a full APS.';
     else msg='This is your total from your best six subjects, excluding Life Orientation. Check each university\'s own rules before applying.';
     document.getElementById('summary').textContent=msg;
+    if(n>=6&&!window.__apsSent){window.__apsSent=1;try{fetch('https://eduranceapp.com/api/public/stats/aps-calculated',{method:'POST',mode:'no-cors',keepalive:true});}catch(e){}}
   }
   DEF.forEach(addRow);
   document.getElementById('add').addEventListener('click',function(){addRow('');});

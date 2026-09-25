@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260926f">
+  <link rel="stylesheet" href="styles.css?v=20260926g">
 </head>
 <body>
   <header>
@@ -58,6 +58,7 @@
             <div><span class="calc-label">Your APS</span><strong id="aps">0</strong><span class="calc-of">out of 42</span></div>
             <p id="summary">Add your marks to see your APS.</p>
           </div>
+          <p class="live-count" data-aps-count hidden><b></b> APS scores calculated with EduRance</p>
         </div>
 
         <h2>How this calculator works</h2>
@@ -112,6 +113,7 @@
       <div class="copyright"><span>© 2026 EduRance. Built by <a href="https://www.prestigetutelage.co.za/" rel="noopener">Prestige Tutelage (Pty) Ltd</a>, a SAQA and QCTO-accredited training provider.</span><span>Knowledge Today. Success Tomorrow.</span></div>
     </div>
   </footer>
+<script src="assets/stats.js" defer></script>
 <script>
 (function(){
   var SUBJECTS=["English Home Language","English First Additional Language","Afrikaans Home Language","Afrikaans First Additional Language","isiZulu Home Language","isiXhosa Home Language","Sesotho Home Language","Setswana Home Language","Sepedi Home Language","Xitsonga Home Language","Tshivenda Home Language","siSwati Home Language","isiNdebele Home Language","isiZulu First Additional Language","isiXhosa First Additional Language","Mathematics","Mathematical Literacy","Technical Mathematics","Physical Sciences","Technical Sciences","Life Sciences","Accounting","Business Studies","Economics","Geography","History","Agricultural Sciences","Computer Applications Technology","Information Technology","Engineering Graphics and Design","Tourism","Consumer Studies","Hospitality Studies","Visual Arts","Dramatic Arts","Music","Religion Studies","Life Orientation"];
@@ -150,6 +152,7 @@
     else if(n<6)msg='You have entered '+n+' subject'+(n===1?'':'s')+' that count. Add '+(6-n)+' more for a full APS.';
     else msg='This is your total from your best six subjects, excluding Life Orientation. Check each university\'s own rules before applying.';
     document.getElementById('summary').textContent=msg;
+    if(n>=6&&!window.__apsSent){window.__apsSent=1;try{fetch('https://eduranceapp.com/api/public/stats/aps-calculated',{method:'POST',mode:'no-cors',keepalive:true});}catch(e){}}
   }
   DEF.forEach(addRow);
   document.getElementById('add').addEventListener('click',function(){addRow('');});
