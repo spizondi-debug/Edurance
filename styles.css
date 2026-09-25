@@ -721,3 +721,6 @@ pre.code { overflow-x: auto; padding: 14px 16px; border-radius: 14px; background
   .partner-card { grid-template-columns: 96px 1fr; gap: 14px; padding: 16px; }
   .partner-card img { width: 96px; height: 64px; }
 }
+.flow-more { margin-top: 14px; }
+.flow-more a { color: #9bdf70; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+.tag-two { bottom: -18px; }
