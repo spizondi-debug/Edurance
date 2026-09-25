@@ -651,3 +651,17 @@ p.dash-title { font-weight: 800; }
 }
 .hero-link { margin: 18px 0 0; font-weight: 800; }
 .hero-link a { color: var(--purple); text-decoration: underline; text-underline-offset: 4px; }
+/* FAQ, status badges, wide tables */
+.faq details { border: 1px solid var(--line); border-radius: 14px; background: #fff; margin-bottom: 10px; }
+.faq summary { cursor: pointer; padding: 14px 44px 14px 16px; font-weight: 800; color: var(--ink); list-style: none; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 16px; top: 10px; font-size: 1.4rem; color: var(--purple); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 0; padding: 0 16px 16px; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.uni-table { min-width: 620px; font-size: 0.9rem; }
+.status { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; white-space: nowrap; }
+.status.open { background: rgba(95, 190, 35, 0.16); color: #2f6d0b; }
+.status.closing { background: rgba(255, 158, 22, 0.18); color: #8a4f00; }
+.status.closed { background: #eef0f5; color: #6b7690; }
+.prose h3 { margin: 26px 0 6px; font-size: 1.1rem; }
