@@ -740,3 +740,18 @@ pre.code { overflow-x: auto; padding: 14px 16px; border-radius: 14px; background
 @media (prefers-reduced-motion: reduce) { .hero-rotator .hl { transition: none; } }
 .hero h1 .hl { color: var(--ink); }
 .hero h1 .hl span { color: var(--purple); }
+/* Hero credibility badge */
+a.hero-cred { display: inline-flex; align-items: center; gap: 10px; margin: 16px 0 0; padding: 7px 14px 7px 8px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.8); font-size: 0.84rem; color: var(--muted); text-decoration: none; white-space: nowrap; transition: border-color .2s; }
+a.hero-cred:hover { border-color: var(--purple); }
+a.hero-cred img { width: 44px; height: auto; display: block; }
+a.hero-cred b { color: var(--ink); font-weight: 800; }
+@media (max-width: 400px) { a.hero-cred { font-size: 0.76rem; gap: 8px; white-space: normal; } a.hero-cred img { width: 36px; } }
+a.hero-cred .c2::before { content: "·"; margin: 0 7px 0 1px; }
+@media (max-width: 620px) {
+  a.hero-cred { white-space: nowrap; border-radius: 16px; text-align: left; padding: 8px 14px 8px 10px; font-size: 0.8rem; }
+  a.hero-cred .c1, a.hero-cred .c2 { display: block; line-height: 1.35; }
+  a.hero-cred .c2 { font-size: 0.74rem; }
+  a.hero-cred .c2::before { content: none; }
+}
+a.hero-cred .c2::before { margin: 0 8px; }
+@media (max-width: 620px) { a.hero-cred .c2::before { content: none; margin: 0; } }
