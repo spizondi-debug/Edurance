@@ -19,6 +19,7 @@
 .calc-label, .calc-of { display: block; font-size: 0.78rem; color: rgb(174, 187, 210); }
 .calc-result p { margin: 0; color: rgb(213, 222, 238); font-size: 0.92rem; }
 
+@media (max-width:420px){.calc-row{grid-template-columns:96px minmax(0,1fr)!important;row-gap:6px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed var(--line)}.calc-row select{grid-column:1/-1}.calc-level{grid-column:auto!important;margin-top:0!important}}
 @media (max-width:520px){.calc-row{grid-template-columns:minmax(0,1fr) 80px}.calc-level{grid-column:1/-1;margin-top:-4px}.calc-result{grid-template-columns:1fr;gap:6px}}
 .pb{margin:10px 2px 0;font-size:12px;color:var(--muted)} .pb a{color:var(--purple);font-weight:800}
 h1{font-size:18px;margin:0 0 10px}

@@ -687,3 +687,12 @@ p.dash-title { font-weight: 800; }
   .nav-links .btn { padding-inline: 14px; font-size: 0.86rem; }
 }
 pre.code { overflow-x: auto; padding: 14px 16px; border-radius: 14px; background: var(--ink); color: #d6e2ff; font-size: 0.8rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; }
+@media (max-width: 420px) {
+  .calc-row { grid-template-columns: 96px minmax(0, 1fr); row-gap: 6px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
+  .calc-row select { grid-column: 1 / -1; }
+  .calc-level { grid-column: auto; margin-top: 0; }
+}
+@media (max-width: 360px) {
+  .brand img { width: 138px; }
+  .nav-links .btn { padding-inline: 12px; font-size: 0.82rem; min-height: 40px; }
+}
