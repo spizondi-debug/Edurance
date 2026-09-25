@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=20260926m">
+  <link rel="stylesheet" href="styles.css?v=20260926n">
 </head>
 <body>
   <header>
@@ -51,8 +51,16 @@
             <span class="hl" aria-hidden="true">Your marks. Your options. <span>Your plan.</span></span>
             <span class="hl" aria-hidden="true">Find bursaries <span>before they close.</span></span>
             <span class="hl" aria-hidden="true">Study smarter with <span>past papers and AI help.</span></span>
+            <span class="hl" aria-hidden="true">Is your APS enough? <span>Find out free.</span></span>
+            <span class="hl" aria-hidden="true">See what you qualify for <span>in one minute.</span></span>
+            <span class="hl" aria-hidden="true">Apply for NSFAS <span>the right way.</span></span>
+            <span class="hl" aria-hidden="true">From Grade 8 subjects <span>to your first year.</span></span>
+            <span class="hl" aria-hidden="true">Free for every learner. <span>Always.</span></span>
+            <span class="hl" aria-hidden="true">Is your APS enough? <span>Find out in 1 minute.</span></span>
+            <span class="hl" aria-hidden="true">NSFAS, bursaries and learnerships, <span>all in one place.</span></span>
+            <span class="hl" aria-hidden="true">Choose Grade 10 subjects <span>that open doors.</span></span>
+            <span class="hl" aria-hidden="true">Free for every learner, <span>on any phone.</span></span>
           </h1>
-          <div class="hl-dots" role="tablist" aria-label="Choose headline"><button type="button" class="on" aria-label="Headline 1"></button><button type="button" aria-label="Headline 2"></button><button type="button" aria-label="Headline 3"></button><button type="button" aria-label="Headline 4"></button></div>
           <p>EduRance helps learners calculate their APS, see which courses they qualify for, discover careers that suit them and study smarter with AI tutors, past papers and mock exams, with goals, badges and deadline reminders to keep them on track.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#how-it-works">Explore EduRance</a>
@@ -65,8 +73,7 @@
             <span><i></i> Careers &amp; bursaries</span>
           </div>
           <p class="live-count" data-aps-count hidden><b></b> APS scores calculated with EduRance</p>
-          <a class="hero-cred" href="https://www.prestigetutelage.co.za/" rel="noopener"><img src="assets/partner-prestige.png" alt="" width="44" height="23"><span class="ct"><span class="c1">Built by <b>Prestige Tutelage</b></span><span class="c2">SAQA &amp; QCTO accredited</span></span></a>
-        </div>
+          </div>
         <div class="visual hero-visual" aria-label="EduRance learning progress preview">
           <div class="visual-card">
             <span class="float-tag tag-one">Free for learners</span>
@@ -300,12 +307,11 @@
 <script>
 (function(){
   var h=document.querySelector('.hero-rotator'); if(!h) return;
-  var items=[].slice.call(h.querySelectorAll('.hl')), dots=[].slice.call(document.querySelectorAll('.hl-dots button')), i=0, t;
+  var items=[].slice.call(h.querySelectorAll('.hl')), i=0, t;
   function fit(){ var m=0; items.forEach(function(el){ el.style.position='static'; m=Math.max(m,el.offsetHeight); el.style.position=''; }); h.style.minHeight=m+'px'; }
-  function show(n){ items[i].classList.remove('is-active'); dots[i].classList.remove('on'); i=(n+items.length)%items.length; items[i].classList.add('is-active'); dots[i].classList.add('on'); }
+  function show(n){ items[i].classList.remove('is-active'); i=(n+items.length)%items.length; items[i].classList.add('is-active'); }
   function start(){ stop(); if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; t=setInterval(function(){ show(i+1); },4500); }
   function stop(){ if(t) clearInterval(t); }
-  dots.forEach(function(d,n){ d.addEventListener('click',function(){ show(n); start(); }); });
   h.addEventListener('mouseenter',stop); h.addEventListener('mouseleave',start);
   document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
   fit(); window.addEventListener('resize',fit); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);

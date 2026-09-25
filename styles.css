@@ -755,3 +755,4 @@ a.hero-cred .c2::before { content: "·"; margin: 0 7px 0 1px; }
 }
 a.hero-cred .c2::before { margin: 0 8px; }
 @media (max-width: 620px) { a.hero-cred .c2::before { content: none; margin: 0; } }
+.hero-rotator { margin-bottom: 6px; }
