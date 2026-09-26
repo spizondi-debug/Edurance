@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260926o">
+  <link rel="stylesheet" href="styles.css?v=20260927mobile-menu">
 </head>
 <body>
   <header>
@@ -30,10 +30,12 @@
       <a class="brand" href="index.html" aria-label="EduRance home">
         <img src="assets/edurance-logo.webp" width="480" height="163" alt="EduRance — Knowledge Today. Success Tomorrow." fetchpriority="high">
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
         <a href="index.html#platform">Platform</a>
         <a href="journey.html">Learning journey</a>
         <a href="aps-calculator.html">Free APS calculator</a>
+        <a class="nav-blog" href="https://edurance.co.za/blog.html">The Guide</a>
         <a class="btn btn-primary" href="https://eduranceapp.com/downloads/">Download app</a>
       </nav>
     </div>
@@ -136,4 +138,5 @@
     </div>
   </footer>
 
+<script src="assets/mobile-menu.js" defer></script>
 </body></html>
