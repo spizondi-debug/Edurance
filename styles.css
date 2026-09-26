@@ -842,3 +842,20 @@ a.hero-cred .c2::before { margin: 0 8px; }
 @media (max-width: 430px) {
   .guide-hero h1 { font-size: 2.25rem; }
 }
+
+
+/* Direct app download prompts */
+.platform-download-link { margin-top: 24px; }
+.download-cta { padding: 34px 0; border-block: 1px solid rgba(100, 36, 200, .08); background: linear-gradient(115deg, #f6fff1 0%, #f6f7fc 100%); }
+.download-cta .shell { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.download-cta-copy { max-width: 760px; }
+.download-cta h2 { margin: 8px 0; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.download-cta p { margin: 0; }
+.download-cta .btn { flex: 0 0 auto; white-space: nowrap; }
+.guide-cta-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 680px) {
+  .download-cta .shell { display: block; }
+  .download-cta .btn { margin-top: 18px; width: 100%; }
+  .guide-cta-actions { margin-top: 22px; }
+  .guide-cta-actions .btn { width: 100%; }
+}
